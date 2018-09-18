@@ -1,0 +1,70 @@
+<!--
+  Generated template for the WeatherPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Weather in your City
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="dataLoaded">
+    <ion-item>
+      <ion-label>
+        Choose other city
+      </ion-label>
+      <ion-select [(ngModel)]="selectedLocation"  (ionChange)="changeLocation($event)" placeholder="Choose one">
+        <ion-option *ngFor="let loc of locationsList" [value]="loc">{{loc}}</ion-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-card-header>
+      <h1>{{weatherInfo.name}}, {{weatherInfo.sys.country}}</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <div id="weather-img"><img src="http://openweathermap.org/img/w/{{weatherInfo.weather[0].icon}}.png" alt=""></div>
+      <div id="weather-overview">{{weatherInfo.weather[0].description | titlecase}}</div>
+      <div id="weather-temp">{{weatherInfo.main.temp}} °C</div>
+    </ion-card-content>
+
+  </ion-card>
+  <ion-list class="card-data-list" *ngIf="dataLoaded">
+    <button ion-item>
+      <ion-icon name="thermometer"></ion-icon>
+      Temp
+      <div class="weather-data">
+        {{weatherInfo.main.temp_min}} - {{weatherInfo.main.temp_max}} °C
+      </div>
+    </button>
+    <button ion-item>
+      <ion-icon name="water"></ion-icon>
+      Humidity
+      <div class="weather-data">
+        {{weatherInfo.main.humidity}} %
+      </div>
+    </button>
+    <button ion-item>
+      <ion-icon name="flag"></ion-icon>
+      Visibility
+      <div class="weather-data">
+        {{weatherInfo.visibility}} m
+      </div>
+    </button>
+    <button ion-item>
+      <ion-icon name="speedometer"></ion-icon>
+      Pressure
+      <div class="weather-data">
+        {{weatherInfo.main.pressure}} hPa
+      </div>
+    </button>
+
+  </ion-list>
+</ion-content>

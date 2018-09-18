@@ -1,3 +1,48 @@
 page-home {
-
+    #logo-img{
+        margin: 0 auto;
+        width: 100px;
+        height: auto;
+        
+    }
+    ion-card-title{
+        text-align: center;
+    }
+    ion-input{
+        border: 1px solid blue;
+    border-style: ridge;
+    margin-top: 1em;
+    }
+    ion-buttons.social-login-button{
+        text-align: center;
+        button{
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            ion-icon{
+                font-size: large;
+                color:white;
+            }
+        }
+        button#fb{
+            background-color: #3c599b;
+        }
+        button#gg{
+            background-color: #c60000;
+        }
+        button#tt{
+            background-color: #00aced;
+        }
+    }
+    #forgot-pass{
+        font-size: large;
+        text-align: right;
+        margin-bottom:1em;
+    }
+    #sign-up{
+        text-align: center;
+        font-size: large;
+    }
+    
 }
+
