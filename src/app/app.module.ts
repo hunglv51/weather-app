@@ -11,14 +11,15 @@ import { WeatherPage } from '../pages/weather/weather';
 import { LoginProvider } from '../providers/login/login';
 import { HttpClientModule } from '@angular/common/http';
 import {GooglePlus} from "@ionic-native/google-plus";
+import { WeatherPageModule } from '../pages/weather/weather.module';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    WeatherPage
   ],
   imports: [
+    WeatherPageModule,
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
